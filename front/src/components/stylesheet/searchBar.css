@@ -1,0 +1,50 @@
+.header{
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:0px ;
+    align-items:center;
+    
+     
+}
+.input{
+    color: white;
+    background-color: rgb(0, 0, 7);
+    border-radius: 1rem;
+    padding: 0.6rem;
+}
+
+.botones{
+display: flex;
+align-items: center;
+justify-content:center;
+top: 0px;
+background-color: black;
+
+}
+
+.botones{
+ background-color: black;
+ margin-top: 0px;
+ padding: 10px;
+ top: 0px;
+ display: flex;
+}
+
+.boton{
+    padding: 0.3rem;
+    margin: 0.4rem;
+    box-shadow: 1px rgb(193, 180, 180);
+    text-decoration: none;
+        background-color: black;
+        border-radius: 45%;
+        border-color: white;
+        margin-left: 1rem
+
+}
+
+.linkboton{
+    color: white;
+    text-decoration: none;
+    
+}

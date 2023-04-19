@@ -1,0 +1,33 @@
+.tarjetas{
+    padding: 1rem;
+    margin: 1rem;
+    background: linear-gradient(90deg, #1D63F9 0%, #4BF1C0 100%);
+    text-decoration: none;
+}
+.datos{
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 1em;
+    justify-content: center;
+    margin: 1rem;
+   
+}
+
+.eliminar{
+    background-color: white;
+    border: black 1px solid;
+    position: relative;
+    width: 20%;
+    height: 2rem;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px rgb(31, 13, 92);
+    color: red;
+    background-color: white;
+    
+
+}
+.link{
+    text-decoration: none
+}
