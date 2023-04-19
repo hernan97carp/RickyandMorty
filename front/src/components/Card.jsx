@@ -45,7 +45,7 @@ useEffect(() => {
         <div className="datos"> <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>
-         <h2>{origin.name}</h2>
+         <h2>{origin}</h2>
          </div>
          <div>
          {

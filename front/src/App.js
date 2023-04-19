@@ -1,9 +1,9 @@
 import './App.css';
+import React from 'react';
 import Form from './components/Form';
 import Nav from './components/Nav'; 
 import Cards from './components/Cards.jsx';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import About from "./components/About";
 import Detail from "./components/Detail";
@@ -30,32 +30,33 @@ function App() {
       }
    } 
    useEffect(()=>{
-    !access && navigate("/")
+    !access && navigate('/')
    }, [access])
 
    const onSearch= (id) => { 
-      //`${URL_Base}/${id}?key=${API_KEY}`
-      const URL_Base= "http://localhost:3001/rickandmorty/character"
-   //   fetch(`${URL_Base}/character/${id}`)
-   //   .then((response)=> response.json())
-   //   .then((data)=>{
-   //    if(data.name){
-   //       setCharacters((oldChars)=>[...oldChars, data])
-   //    } else{
-   //       alert("algo salio mal")
-   //    }
-   //   })
+      // `${URL_Base}/${id}?key=${API_KEY}`
+      // const URL_Base= "http://localhost:3001/rickandmorty/character"
+     fetch(`http://localhost:3001/rickandmorty/onsearch/${id}`)
+     .then((response)=> response.json())
+     .then((data) =>{
+      console.log(data)
+      if(data.id){
+         setCharacters((oldChars)=>[...oldChars, data])
+      } else{
+         alert("algo salio mal")
+      }
+     })
 
-      axios(`${URL_Base}/${id}`)
-      .then(response => response.data)
-      .then(( data ) => { 
-         console.log(data)       // axios me da un objeto gigante, hacemos destructuring y la response esta en data. o hacemos un then mas y no lo ponemos entre llaves
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            alert('¡No hay personajes con este ID!');
-         }
-      });
+      // axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      // .then(response => response.data)
+      // .then(( data ) => { 
+      //    console.log(data)       // axios me da un objeto gigante, hacemos destructuring y la response esta en data. o hacemos un then mas y no lo ponemos entre llaves
+      //    if (data.name) {
+      //       setCharacters((oldChars) => [...oldChars, data]);
+      //    } else {
+      //       alert('¡No hay personajes con este ID!');
+      //    }
+      // });
    }
 
    const onClose = (id) => {
