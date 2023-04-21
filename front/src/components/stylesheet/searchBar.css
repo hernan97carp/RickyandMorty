@@ -14,37 +14,47 @@
     padding: 0.6rem;
 }
 
-.botones{
-display: flex;
-align-items: center;
-justify-content:center;
-top: 0px;
-background-color: black;
 
-}
 
 .botones{
  background-color: black;
+
  margin-top: 0px;
  padding: 10px;
  top: 0px;
  display: flex;
+ align-items: center;
+ justify-content: space-around;
 }
 
 .boton{
-    padding: 0.3rem;
+  
+    padding: 0.2rem;
     margin: 0.4rem;
     box-shadow: 1px rgb(193, 180, 180);
     text-decoration: none;
         background-color: black;
-        border-radius: 45%;
-        border-color: white;
-        margin-left: 1rem
+        border-radius: 5%;
+        border-color: rgba(43, 69, 237, 0.785);
+        margin-left: 1rem;
+        width: 6rem;
+        height: 2rem;
+        transition: width 1s;
 
+
+}
+.boton:hover{
+    width: 9rem;
+   height: 2rem;
+   background: rgb(30, 22, 145);
+   border-radius: 5%;
+   font-size: 1rem;
+   
 }
 
 .linkboton{
-    color: white;
+    font-family:sans-serif;
+    color:white;
     text-decoration: none;
     
 }
