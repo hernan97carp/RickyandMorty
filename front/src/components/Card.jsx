@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { addFavorite, deleteFavorite } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
@@ -38,10 +38,17 @@ useEffect(() => {
    
    return (
       <div className="tarjetas">
+
+         <div className="cajadeboton">
          <button className="eliminar" onClick={() => onClose(id)}>X</button>
-       <div className="link"><Link to={`/detail/${id}`}><h2>{name}</h2></Link>
+         </div>
+
+
+       <div className="linkcaja"><NavLink className="link" to={`/detail/${id}`}><h2>{name}</h2></NavLink>
        </div>  
+       
        <img className="imagen" src={image} alt='Imagen del personaje' />
+   
         <div className="datos"> <h2>{status}</h2>
          <h2>{species}</h2>
          <h2>{gender}</h2>

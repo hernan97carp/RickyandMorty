@@ -1,9 +1,94 @@
 .tarjetas{
-    padding: 1rem;
-    margin: 1rem;
+    border-radius: 1rem;
+    margin: 5rem;
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-width: 5px;
     background: linear-gradient(90deg, #1D63F9 0%, #4BF1C0 100%);
     text-decoration: none;
+    padding: 1rem;
+    transition: width 2s;
+    
+    
 }
+
+.tarjetas:hover{
+ width: 300px;
+ background: #501ca3;
+}
+
+/* Boton de eliminar*/
+
+
+
+.cajadeboton{
+margin: 1rem;
+text-align: start;
+
+}
+
+.eliminar{
+    background-color: white;
+    border: black 1px solid;
+    
+    width: 3rem;
+   
+    height: 2rem;
+    border-radius: 100%;
+    box-shadow: 2px 2px 2px rgb(31, 13, 92);
+    color: red;
+    border-color: #1D63F9;
+    background-color: white;
+    
+    
+}
+.eliminar:hover{
+
+    background-color: rgb(215, 60, 18);
+    color: white;
+    font-size: 1rem;
+    width: 4rem;
+   
+}
+
+/* Link  */
+
+
+.linkcaja{
+text-align: center;
+   margin: 0.8rem; 
+}
+
+
+.link{
+text-decoration: none;
+
+}
+
+.link h2{
+    color: #ede06b;
+    text-transform: none;
+   text-decoration: none;
+}
+
+.link h2:hover{
+    background:#084de2
+}
+
+
+
+/* imagen */
+
+
+
+.imagen{
+    box-sizing: content-box;
+
+}
+
+
 .datos{
     font-size: 15px;
     display: grid;
@@ -15,19 +100,4 @@
    
 }
 
-.eliminar{
-    background-color: white;
-    border: black 1px solid;
-    position: relative;
-    width: 20%;
-    height: 2rem;
-    border-radius: 100%;
-    box-shadow: 2px 2px 2px rgb(31, 13, 92);
-    color: red;
-    background-color: white;
-    
 
-}
-.link{
-    text-decoration: none
-}
