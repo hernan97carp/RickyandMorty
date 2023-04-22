@@ -12,9 +12,11 @@ const SearchBar = ({onSearch})=> {   // tb puedo usar props y en la variable pro
    return (
       <div className="menuDeNavegacion">
          <header className="header">
-         <input  className="input" type='search' value={id} onChange={handleChange} placeholder="Ingrese id del personaje..." />
-         <button className="botonBusqueda" onClick= {() => {onSearch(id); setId('')}}>Agregar</button>  {/*//cuando necesito pasar un argumento a una funcion tengo q hacerlo con un cb, sino se va a ejecutar la funcion*/}
-         </header>
+         <input  className="input" type='search' value={id} onChange={handleChange} placeholder="Numero del personaje..." />
+        
+         <button className="ov-btn-grow-box" onClick= {() => {onSearch(id); setId('')}}>Agregar</button>  {/*//cuando necesito pasar un argumento a una funcion tengo q hacerlo con un cb, sino se va a ejecutar la funcion*/}
+      
+       </header>
          
    
    
