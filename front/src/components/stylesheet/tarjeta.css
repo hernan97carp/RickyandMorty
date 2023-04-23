@@ -101,3 +101,10 @@ text-decoration: none;
 }
 
 
+.botonCorazon{
+    text-align: center;
+    border-radius: 50%;
+    justify-content: center;
+    width:2rem ;
+    background: #7b9be1;
+}

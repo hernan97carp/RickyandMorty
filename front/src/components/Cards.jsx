@@ -17,7 +17,7 @@ const Cards = ({characters, onClose}) => {
                   name={name}
                   species={species}
                   gender={gender}
-                  origin={origin.name}
+                  origin={origin?.name}
                   image={image}
                   onClose={onClose}
                />

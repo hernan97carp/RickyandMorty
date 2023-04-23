@@ -2,8 +2,8 @@ const URL = "https://rickandmortyapi.com/api/character/";
 const axios = require("axios");
 function getCharDetail(req, res) {
   // localhost:3001/rickyandmorty/onsearch/1
-  const { id } = req.params;
-  axios(URL + id).then(
+  const { detailId } = req.params;
+  axios(URL + detailId).then(
     (response) => {
       const character = {
         id: response.data.id,

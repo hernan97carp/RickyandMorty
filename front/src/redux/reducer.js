@@ -11,8 +11,8 @@ const reducer = (state= initialState, {type, payload})=>{
         case ADD_FAVORITE:
             return{
                 ...state,
-                myFavorites:[...state.allCharacters, payload],
-                allCharacters: [...state.allCharacters, payload]
+                myFavorites: payload, //[...state.allCharacters, payload]
+                allCharacters: payload,//[...state.allCharacters, payload]
                 //uno lo vamos a usar para ir filtrando sin pisar el original
                  // con el otro puedo recuperar todo
             }
@@ -34,7 +34,7 @@ const reducer = (state= initialState, {type, payload})=>{
         case DELETE_FAVORITE:
         return {
             ...state,
-            myFavorites: state.myFavorites.filter(char=> char.id !== payload)
+            myFavorites: payload,//state.myFavorites.filter(char=> char.id !== payload)
         }
         default:
             return state;
