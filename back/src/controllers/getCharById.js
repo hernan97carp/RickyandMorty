@@ -18,7 +18,7 @@ function getCharById(req, res) {
   );
 }
 
-module.exports = getCharById;
+module.exports = {getCharById};
 
 // const axios = require('axios') // import axios from 'axios'
 

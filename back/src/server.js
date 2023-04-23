@@ -1,13 +1,26 @@
-const express = require('express')
+const express = require('express');
 const server = express();
+const morgan = require("morgan");
 const PORT = 3001;
+const router = require("../src/routes/index");
+
+
+//parseara el body  de las solicitudes en formato jsonprefijo
+server.use(express.json())
+server.use(morgan("dev"))
+//agregara el prefijo "/rickyandmorty" a todas las rutas definidas en tu router
+//todo lo q vaya ala url  barra lo q sea vos anda y buscala desde router
+//termina de enrutarlo con lo q esta en router 
+server.use('/rickandmorty', router)
+
+
+
+
+
 
 server.listen(PORT, ()=>{
   console.log("server raised in port "+ PORT);
 });
-
-
-
 
 
 
@@ -33,15 +46,6 @@ server.listen(PORT, ()=>{
 
 
 // }).listen(3001, 'localhost')
-
-
-
-
-
-
-
-
-
 
 
 

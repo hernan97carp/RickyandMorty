@@ -17,10 +17,13 @@ function getCharDetail(req, res) {
       res.status(200).json(character);
     },
     (error) => res.status(500).json(error.message)
+    //.catch ((error)=>{
+      //  res.status(500).send(error.message)
+    //})
   );
 }
 
-module.exports = getCharDetail;
+module.exports = {getCharDetail};
 
 // const axios = require('axios') // import axios from 'axios'
 
