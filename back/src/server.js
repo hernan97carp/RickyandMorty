@@ -1,22 +1,38 @@
-const http = require("http");
-const getCharById = require("./controllers/getCharById")
-const getCharDetail = require("./controllers/getCharDetail")
-// const character = require("./utils/data");
+const express = require('express')
+const server = express();
+const PORT = 3001;
+
+server.listen(PORT, ()=>{
+  console.log("server raised in port "+ PORT);
+});
 
 
-http.createServer((req,res)=>{
-    res.setHeader('Access-Control-Allow-Origin', '*')
-let id = req.url.split('/').at(-1);
-  if(req.url.includes('onsearch')){
-    getCharById(res, id)
-  }
-
-  if(req.url.includes('detail')){
-   getCharDetail(res, id)
-  }
 
 
-}).listen(3001, 'localhost')
+
+
+
+
+
+// const http = require("http");
+// const getCharById = require("./controllers/getCharById")
+// const getCharDetail = require("./controllers/getCharDetail")
+// // const character = require("./utils/data");
+
+
+// http.createServer((req,res)=>{
+//     res.setHeader('Access-Control-Allow-Origin', '*')
+// let id = req.url.split('/').at(-1);
+//   if(req.url.includes('onsearch')){
+//     getCharById(res, id)
+//   }
+
+//   if(req.url.includes('detail')){
+//    getCharDetail(res, id)
+//   }
+
+
+// }).listen(3001, 'localhost')
 
 
 
