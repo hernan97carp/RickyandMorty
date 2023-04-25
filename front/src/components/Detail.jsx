@@ -11,11 +11,11 @@ const Detail= ()=>{
 
 useEffect(()=>{
 
- fetch(`http://localhost:3001/rickyandmorty/detail/${id}`)
+ fetch(`http://localhost:3001/rickandmorty/detail/${id}`)
  .then((response) => response.json())
  .then((char)=>{
    if(char.name){
-      setcharacter(char)
+      setCharacter(char)
    } else{
       alert("no hay personajes con esa ID")
    }
@@ -51,6 +51,7 @@ return setCharacter({});
          <h2>{character?.species}</h2>
          <h2>{character?.gender}</h2>
          <h2>{character?.origin?.name}</h2>
+      
          </div>
         
     </div>
