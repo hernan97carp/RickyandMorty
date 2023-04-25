@@ -1,23 +1,28 @@
-const URL = "https://rickandmortyapi.com/api/character/";
+const URL = "https://rickandmortyapi.com/api/character";
 const axios = require("axios");
-function getCharById(req, res) {
-  // localhost:3001/rickyandmorty/onsearch/1
-  const { id } = req.params;
-  axios(URL + id).then(
-    (response) => {
-      const character = {
-        id: response.data.id,
-        name: response.data.name,
-        image: response.data.image,
-        gender: response.data.gender,
-        species: response.data.species,
-      };
-      res.status(200).json(character);
-    },
-    (error) => res.status(500).json(error.message)
-  );
-}
+const getCharById = (req, res) =>{
+ const { id } = req.params;
 
+ axios(`${URL}/${id}`)
+ .then(response => response.data)
+ .then(({status, name, especies, origin, image, gender})=>{
+  if(name){
+    const character = {
+      id,
+      name,
+      especies,
+      image,
+      gender,
+      status,
+      origin   
+     }
+    return res.status(200).json(character)
+  }
+  return res.status(404).send("not found")
+ })
+
+.catch(error => res.status(500).json(error.message))
+}
 module.exports = {getCharById};
 
 // const axios = require('axios') // import axios from 'axios'
@@ -47,3 +52,30 @@ module.exports = {getCharById};
 // }
 
 // module.exports = getCharById;
+
+
+
+
+
+
+
+
+
+
+// const getCharById = (req, res) => {
+//   // localhost:3001/rickyandmorty/onsearch/1
+//   const { id } = req.params;
+//   axios(`${URL}/${id}`).then(
+//     (response) => {
+//       const character = {
+//         id: response.data.id,
+//         name: response.data.name,
+//         image: response.data.image,
+//         gender: response.data.gender,
+//         species: response.data.species,
+//       };
+//       res.status(200).json(character);
+//     },
+//     (error) => res.status(500).json(error.message)
+//   );
+// }

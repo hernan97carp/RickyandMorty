@@ -2,27 +2,28 @@
 import { ADD_FAVORITE, DELETE_FAVORITE, FILTER, ORDER } from "./actions-types"
 import axios from "axios";
 export const addFavorite = (character)=>{
-    return function(dispatch) {
-        axios.post("hhtp://localhost:3001/rickandmorty/favs", character)
-        .then(response => {
-            return dispatch({
-                type: ADD_FAVORITE,
-                payload: response.data,
-            })
-        })
-    }
+    const endpoint = 'http://localhost:3001/rickandmorty/favs';
+    return (dispatch) => {
+       axios.post(endpoint, character)
+       .then(({ data }) => {
+          return dispatch({
+             type: ADD_FAVORITE,
+             payload: data,
+          });
+       });
+    };
 }
 
 export const deleteFavorite = (id)=>{
-    return function(dispatch){
-        axios(`hhtp://localhost:3001/rickandmorty/favs/${id}`,)
-        .then((response) => {
-            return dispatch({
-                type: DELETE_FAVORITE,
-                payload: response.data,
-            })
-        })    
-    }   
+    const endpoint = 'http://localhost:3001/rickandmorty/favs/' + id;
+    return (dispatch) => {
+       axios.delete(endpoint).then(({ data }) => {
+          return dispatch({
+             type: DELETE_FAVORITE,
+             payload: data,
+       });
+       });
+    };
    
 }
 export const filterCards= (gender)=>{

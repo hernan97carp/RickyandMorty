@@ -8,11 +8,12 @@ import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import About from "./components/About";
 import Detail from "./components/Detail";
 import Favorites from './components/favorites/Favorites';
-
+import  axios  from 'axios';
 
 //"https://be-a-rym.up.railway.app/api/character";
 
 // const API_KEY="85db08eae64c.68e9903bb2065a4f0bc8";
+ 
 
 function App() {
 
@@ -20,15 +21,42 @@ function App() {
    const location = useLocation();
    const navigate = useNavigate();
    const [access, setAccess] =  useState(false); 
-   const username= "hernan@hotmail.com";
-   const password= "123asd!";
-   const login = (userData)=>{
-      if(userData.username === username && userData.password === password){
-         setAccess(true)
-         navigate("/home") //loredirigimos a home si coincide todo
 
-      }
-   } 
+   const login= (userData)=> {
+      console.log(userData)
+      const { username, password } = userData;
+      console.log(username)
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?username=${username}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+
+      })
+      .catch((error)=>{
+         console.log(error)
+      })
+   }
+
+
+
+
+
+
+   // const login = (userData)=>{
+   //    if(userData.username === username && userData.password === password){
+   //       setAccess(true)
+   //       navigate("/home") //loredirigimos a home si coincide todo
+
+   //    }
+   // } 
+
+
+
+
+
+
+
    useEffect(()=>{
     !access && navigate('/')
    }, [access])
