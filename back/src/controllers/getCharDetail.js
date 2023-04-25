@@ -12,7 +12,7 @@ function getCharDetail(req, res) {
         gender: response.data.gender,
         species: response.data.species,
         status: response.data.status,
-        origin: response.data.origin?.name,
+        origin: response.data.origin.name,
       };
       res.status(200).json(character);
     },
