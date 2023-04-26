@@ -31,7 +31,7 @@ const Form =({login})=>{
     }
 
 return(
- <div >
+ <div className="form">
     <form action="" onSubmit={handleSubmit} className="form-react">
  <div className="form-control">
    <label htmlFor="username" className="label">Username:</label>

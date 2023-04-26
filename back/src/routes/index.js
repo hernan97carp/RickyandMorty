@@ -13,7 +13,7 @@ router.get("/detail/:detailId",getCharDetail)
 router.get("/login", (req, res)=>{
     login(req, res)
 })
-// router.post("/favs", postFav )
-// router.delete("/favs/:id", deleteFav)
+router.post("/favs", postFav )
+router.delete("/favs/:id", deleteFav)
 
 module.exports = router;

@@ -1,26 +1,30 @@
 const URL = "https://rickandmortyapi.com/api/character/";
 const axios = require("axios");
-function getCharDetail(req, res) {
+async function  getCharDetail(req, res) {
   // localhost:3001/rickyandmorty/onsearch/1
   const { detailId } = req.params;
-  axios(URL + detailId).then(
-    (response) => {
-      const character = {
-        id: response.data.id,
-        name: response.data.name,
-        image: response.data.image,
-        gender: response.data.gender,
-        species: response.data.species,
-        status: response.data.status,
-        origin: response.data.origin.name,
-      };
-      res.status(200).json(character);
-    },
-    (error) => res.status(500).json(error.message)
-    //.catch ((error)=>{
-      //  res.status(500).send(error.message)
-    //})
-  );
+
+try{
+   const result = await axios(URL + detailId)
+
+  const resultadoApi = result.data;
+  
+  const character = {
+
+    id: resultadoApi.id,
+    name: resultadoApi.name,
+    image: resultadoApi.image,
+    gender: resultadoApi.gender,
+    species: resultadoApi.species,
+    status: resultadoApi.status,
+    origin: resultadoApi.origin.name,
+  }
+res.status(200).json(character)
+
+} catch(error){
+   res.status(500).json(error.message)
+}
+
 }
 
 module.exports = {getCharDetail};
@@ -52,3 +56,23 @@ module.exports = {getCharDetail};
 // }
 
 // module.exports = getCharDetail;
+
+
+// axios(URL + detailId).then(
+//   (response) => {
+//     const character = {
+//       id: response.data.id,
+//       name: response.data.name,
+//       image: response.data.image,
+//       gender: response.data.gender,
+//       species: response.data.species,
+//       status: response.data.status,
+//       origin: response.data.origin.name,
+//     };
+//     res.status(200).json(character);
+//   },
+//   (error) => res.status(500).json(error.message)
+//   //.catch ((error)=>{
+//     //  res.status(500).send(error.message)
+//   //})
+// );

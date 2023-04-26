@@ -1,6 +1,6 @@
 
 import { ADD_FAVORITE, DELETE_FAVORITE,FILTER, ORDER } from "./actions-types"
-import axios from "axios"
+
 
 const initialState = {
     myFavorites: [],
@@ -11,8 +11,11 @@ const reducer = (state= initialState, {type, payload})=>{
         case ADD_FAVORITE:
             return{
                 ...state,
-                myFavorites: payload, //[...state.allCharacters, payload]
-                allCharacters: payload,//[...state.allCharacters, payload]
+                myFavorites: payload, 
+               
+                allCharacters: payload
+                 //[...state.allCharacters, payload]
+                //[...state.allCharacters, payload]
                 //uno lo vamos a usar para ir filtrando sin pisar el original
                  // con el otro puedo recuperar todo
             }

@@ -1,5 +1,17 @@
+.form{
+display: flex;
+  width: 40%;
+  margin:auto;
+  margin-top:10%;
+  align-items: center;
+  justify-content: center;
+
+}
 #form-react {
     padding: 30px 20px;  
+    justify-content: center;
+    align-items: center;
+
   }
 .form-react button {
     background: #f2317f;
