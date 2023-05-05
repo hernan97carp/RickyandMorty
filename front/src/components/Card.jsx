@@ -43,7 +43,6 @@ useEffect(() => {
          <button className="eliminar" onClick={() => onClose(id)}>X</button>
          </div>
 
-
        <div className="linkcaja"><NavLink className="link" to={`/detail/${id}`}><h2>{name}</h2></NavLink>
        </div>  
        

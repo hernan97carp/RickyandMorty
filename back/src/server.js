@@ -1,8 +1,9 @@
 const express = require('express');
 const server = express();
 const morgan = require("morgan");
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const router = require("../src/routes/index");
+const {conn} = require('../src/DB_connection')
 //parseara el body  de las solicitudes en formato jsonprefijo
 server.use(express.json())
 server.use(morgan("dev"))
@@ -23,9 +24,21 @@ server.use((req, res, next) => {
 // server.use(cors())
 
 server.use('/rickandmorty', router)
-server.listen(PORT, ()=>{
-  console.log("server raised in port "+ PORT);
+
+server.listen(PORT, async () => {
+  console.log(`Server raised in port: http://localhosT 3001`);
+  console.log('::::', conn.models)
+  await conn.sync({ force: true });
 });
+
+// conn.sync({ force: true}).then(()=>{
+// console.log('DB conectada, master');
+//   server.listen(PORT, ()=>{
+//   console.log("server raised in port "+ PORT);
+// });
+  
+// })
+
 
 // app.get('/second-server', (req, res, next) => {
 //   res.send({ data: "No encontramos resultados" })

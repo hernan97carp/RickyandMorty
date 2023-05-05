@@ -1,5 +1,5 @@
 let myFavorites = [];
-
+const {User, Favorite} = require("../DB_connection")
 
 const postFav = (req, res)=>{
     const character = req.body;
