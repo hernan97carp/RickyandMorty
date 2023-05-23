@@ -1,110 +1,105 @@
-.tarjetas{
-    border-radius: 1rem;
-    margin: 5rem;
-    width: 15rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    border-width: 5px;
-    background: linear-gradient(90deg, #1D63F9 0%, #4BF1C0 100%);
-    text-decoration: none;
-    padding: 1rem;
-    transition: width 2s;
-    
-    
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Roboto&display=swap");
 
-.tarjetas:hover{
- width: 300px;
- background: #8837C4;
-}
+.tarjetas {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  height: 360px;
+  width: 210px;
+  box-sizing: content-box;
+  margin: 1rem;
+  border-radius: 20px;
+
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #9f3cc1;
+  transition: all 0.45s ease-in-out;
+}
+.tarjetas:hover {
+  transform: scale(1.04);
+  border: 1px solid black;
+  box-shadow: 7px 7px 30px #4127cd;
+}
 /* Boton de eliminar*/
 
-
-
-.cajadeboton{
-margin: 1rem;
-text-align: start;
-
+.cajadeboton {
+  color: white;
+  margin-top: 0px;
 }
 
-.eliminar{
-    background-color: white;
-    border: black 1px solid;
-    
-    width: 3rem;
-   
-    height: 2rem;
-    border-radius: 100%;
-    box-shadow: 2px 2px 2px rgb(31, 13, 92);
-    color: red;
-    border-color: #1D63F9;
-    background-color: white;
-    
-    
+.eliminar {
+  width: 20px;
+  height: 20px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  border-radius: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #9f3cc1;
 }
-.eliminar:hover{
-
-    background-color: rgb(215, 60, 18);
-    color: white;
-    font-size: 1rem;
-    width: 4rem;
-   
+.eliminar:hover {
+  width: 25px;
+  height: 20px;
+  border: 1px solid #c10758;
 }
 
 /* Link  */
 
-
-.linkcaja{
-text-align: center;
-   margin: 0.8rem; 
+.linkcaja {
+  text-decoration: none;
+  text-transform: none;
 }
 
-
-.link{
-text-decoration: none;
-
+.link {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
 }
 
-.link h2{
-    color: #ede06b;
-    text-transform: none;
-   text-decoration: none;
+.link h2 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
-.link h2:hover{
-    background:#084de2
+.link h2:hover {
+  color: #9f3cc1;
 }
-
-
 
 /* imagen */
 
-
-
-.imagen{
-    box-sizing: content-box;
-
+.imagen {
+  width: 140px;
+  height: 110px;
+  border-radius: 10px;
 }
 
-
-.datos{
-    font-size: 15px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    grid-gap: 1em;
-    justify-content: center;
-    margin: 1rem;
-   
+.datos {
+  color: white;
+  font-size: 0.7rem;
+  margin: 0.2rem;
 }
 
+.botonCorazon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  margin-bottom: 0px;
+  background-color: #9f3cc1;
+  border: 1px solid #9f3cc1;
+  border-radius: 20px;
+}
 
-.botonCorazon{
-    text-align: center;
-    border-radius: 50%;
-    justify-content: center;
-    width:2rem ;
-    background: #7b9be1;
+.conteinerImagens {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: center;
+
+  margin-left: 1rem;
 }

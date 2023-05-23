@@ -1,35 +1,34 @@
 //import React from "react"; para crear una plantilla del componente atajo: rafce
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
-import "../components/stylesheet/searchBar.css"
+import "../components/stylesheet/searchBar.css";
 
 const Nav = (props) => {
-    return(
-        <>
-           
-            <div className="botones">
-            <button className="boton">
-                <NavLink className="linkboton"  to={"/about"}>About</NavLink>
-            </button>
-            <button className="boton">
-                <NavLink className="linkboton" to={"/home"}>Home</NavLink>
-            </button>
-            <button className="boton">
-                <NavLink className="linkboton" to={"/"}>LogOut</NavLink>
-            </button>
-            <button className="boton">
-                <NavLink className="linkboton" to={"/favorites"}>Favoritos</NavLink>
-            </button >
-            </div>
-            <div className="searchBar">
-                <SearchBar onSearch={props.onSearch}/>
-                </div>
-                
-              
-             
-        </>
-    )
-}
+  return (
+    <>
+      <div className="botonesConteiner">
+        <NavLink className="linkboton" to={"/"}>
+          <button className="boton">LogOut</button>
+        </NavLink>
 
-export default Nav
+        <NavLink className="linkboton" to={"/home"}>
+          <button className="boton">Home</button>
+        </NavLink>
 
+        <NavLink className="linkboton " to={"/about"}>
+          <button className="boton">About</button>
+        </NavLink>
+
+        <NavLink className="linkboton" to={"/favorites"}>
+          <button className="boton">Favorite</button>
+        </NavLink>
+      </div>
+
+      <div className="searchBar">
+        <SearchBar onSearch={props.onSearch} />
+      </div>
+    </>
+  );
+};
+
+export default Nav;

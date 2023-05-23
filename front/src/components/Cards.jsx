@@ -1,31 +1,25 @@
 import React from "react";
-import Card from './Card';
-import "./stylesheet/cards.css"
+import Card from "./Card";
+import "./stylesheet/cards.css";
 
-
-const Cards = ({characters, onClose}) => {
-   return (
-      <div className="containerCard">
-         {
-         characters.map( ({id,name,status,species,gender,origin,image}) =>{
-            return(
-               <Card
-               
-                  key={id}
-                  id={id}
-                  status={status}
-                  name={name}
-                  species={species}
-                  gender={gender}
-                  origin={origin?.name}
-                  image={image}
-                  onClose={onClose}
-               />
-            )
-         })
-         }
-      </div>
-   )
+export default function Cards({ characters, onClose }) {
+  return (
+    <div className="containerCard">
+      {characters.map((personaje) => {
+        return (
+          <Card
+            onClose={onClose}
+            key={personaje.id}
+            id={personaje.id}
+            status={personaje.status}
+            name={personaje.name}
+            species={personaje.species}
+            gender={personaje.gender}
+            origin={personaje.origin?.name}
+            image={personaje.image}
+          />
+        );
+      })}
+    </div>
+  );
 }
-
-export default Cards
