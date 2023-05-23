@@ -1,29 +1,26 @@
 const URL = "https://rickandmortyapi.com/api/character";
 const axios = require("axios");
-const getCharById = async function (req, res){
- const { id } = req.params;
+const getCharById = async function (req, res) {
+  const { id } = req.params;
 
-try{
- 
-const result = await axios(`${URL}/${id}`)
-const characterApi = result.data
-const character={
-
-  id: characterApi.id,
-  name: characterApi.name,
-  especies: characterApi.especies,
-  image: characterApi.image,
-  gender: characterApi.gender,
-  status: characterApi.status,
-  origin: characterApi.origin   
-
-}
-res.status(200).end(JSON.stringify(character))
-}catch(error){
-  error => res.status(500).end("not found character", error)
- }
-}
-module.exports = {getCharById};
+  try {
+    const result = await axios(`${URL}/${id}`);
+    const characterApi = result.data;
+    const character = {
+      id: characterApi.id,
+      name: characterApi.name,
+      especies: characterApi.especies,
+      image: characterApi.image,
+      gender: characterApi.gender,
+      status: characterApi.status,
+      origin: characterApi.origin,
+    };
+    res.status(200).json(character);
+  } catch (error) {
+    (error) => res.status(500).end("not found character", error);
+  }
+};
+module.exports = { getCharById };
 
 // const axios = require('axios') // import axios from 'axios'
 
@@ -53,15 +50,6 @@ module.exports = {getCharById};
 
 // module.exports = getCharById;
 
-
-
-
-
-
-
-
-
-
 // const getCharById = (req, res) => {
 //   // localhost:3001/rickyandmorty/onsearch/1
 //   const { id } = req.params;
@@ -80,16 +68,9 @@ module.exports = {getCharById};
 //   );
 // }
 
-
-
-
-
-
 // const getCharById = (req, res) =>{
 //   const { id } = req.params;
- 
- 
- 
+
 //   axios(`${URL}/${id}`)
 //   .then(response => response.data)
 //   .then(({status, name, especies, origin, image, gender})=>{
@@ -101,14 +82,13 @@ module.exports = {getCharById};
 //        image,
 //        gender,
 //        status,
-//        origin   
+//        origin
 //       }
 //      return res.status(200).json(character)
 //    }
 //    return res.status(404).send("not found")
 //   })
- 
+
 //  .catch(error => res.status(500).json(error.message))
 //  }
 //  module.exports = {getCharById};
-
